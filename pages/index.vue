@@ -4,6 +4,7 @@
     <div class="flex gap-px">
       <TheNews />
       <StockTable />
+      <IndexInfo />
     </div>
   </div>
 </template>

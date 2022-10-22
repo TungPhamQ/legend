@@ -1,0 +1,26 @@
+[
+  {
+    "name": "stock-analysis",
+    "path": "/stock-analysis",
+    "component": "D:\\\\Desktop_work\\\\tai_lieu_hoc\\\\IMC\\\\legend_investor\\\\legend_investor\\\\pages\\\\stock-analysis.vue",
+    "chunkName": "pages/stock-analysis"
+  },
+  {
+    "name": "tool",
+    "path": "/tool",
+    "component": "D:\\\\Desktop_work\\\\tai_lieu_hoc\\\\IMC\\\\legend_investor\\\\legend_investor\\\\pages\\\\tool.vue",
+    "chunkName": "pages/tool"
+  },
+  {
+    "name": "wiki",
+    "path": "/wiki",
+    "component": "D:\\\\Desktop_work\\\\tai_lieu_hoc\\\\IMC\\\\legend_investor\\\\legend_investor\\\\pages\\\\wiki.vue",
+    "chunkName": "pages/wiki"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\Desktop_work\\\\tai_lieu_hoc\\\\IMC\\\\legend_investor\\\\legend_investor\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]

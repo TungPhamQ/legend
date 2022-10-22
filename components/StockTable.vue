@@ -82,5 +82,6 @@ th {
 .btn-tab {
   border: 1px solid #6b7280;
   border-radius: 5px 5px 0 0;
+  cursor: pointer;
 }
 </style>

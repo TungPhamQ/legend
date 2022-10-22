@@ -1,0 +1,26 @@
+{
+  "IndexInfo": {
+    "description": "Auto imported from components/IndexInfo.vue"
+  },
+  "NuxtLogo": {
+    "description": "Auto imported from components/NuxtLogo.vue"
+  },
+  "SearchBox": {
+    "description": "Auto imported from components/SearchBox.vue"
+  },
+  "StockTable": {
+    "description": "Auto imported from components/StockTable.vue"
+  },
+  "TheHeader": {
+    "description": "Auto imported from components/TheHeader.vue"
+  },
+  "TheNews": {
+    "description": "Auto imported from components/TheNews.vue"
+  },
+  "Tutorial": {
+    "description": "Auto imported from components/Tutorial.vue"
+  },
+  "SearchBoxMagnifyGlass": {
+    "description": "Auto imported from components/SearchBox/MagnifyGlass.vue"
+  }
+}
