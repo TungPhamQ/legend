@@ -1,20 +1,28 @@
 <template>
-  <header
-    class="header flex place-content-between items-end gap-5 bg-gray-800 h-10"
-  >
-    <NuxtLogo class="w-10 h-10" />
-    <ul class="text-white">
-      <li>
-        <nuxt-link to="/">Trang chủ |</nuxt-link>
-        <nuxt-link to="/stock-analysis">Phân tích cổ phiếu |</nuxt-link>
-        <nuxt-link to="/tool">Công cụ |</nuxt-link>
-        <nuxt-link to="/wiki">HDSD</nuxt-link>
-      </li>
-    </ul>
-    <SearchBox />
-    <div class="text-white">
-      <button @click="handleLogin" class="m-1">Login</button>
-      <button @click="handleRegister" class="m-1">Register</button>
+  <header class="header flex place-content-between items-end gap-5 h-10">
+    <div class="flex items-center">
+      <NuxtLogo class="w-10 h-10" />
+      <ul class="nav-bar">
+        <li>
+          <nuxt-link to="/" >Trang chủ </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/stock-analysis">Phân tích cổ phiếu </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/tool">Công cụ </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/wiki">HDSD</nuxt-link>
+        </li>
+      </ul>
+    </div>
+    <div class="flex items-center">
+      <SearchBox :listAPI="listAPI" />
+      <div class="">
+        <button @click="handleLogin" class="m-1">Login</button>
+        <button @click="handleRegister" class="m-1 register">Register</button>
+      </div>
     </div>
   </header>
 </template>
@@ -25,6 +33,16 @@ import SearchBox from './SearchBox.vue'
 export default {
   name: 'The Header',
   components: { NuxtLogo, SearchBox },
+  data: {
+    return() {
+      listAPI: [
+        { name: 'Vin Group', code: 'VIC' },
+        { name: 'Vin Group', code: 'VIC' },
+        { name: 'Vin Group', code: 'VIC' },
+        { name: 'Vin Group', code: 'VIC' },
+      ]
+    },
+  },
   methods: {
     handleLogin() {
       window.alert('Show Login Modal')
@@ -35,4 +53,33 @@ export default {
   },
 }
 </script>
-<style></style>
+<style>
+.header {
+  height: auto;
+  padding: 4px 24px;
+  margin-bottom: 10px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+ul li {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+.register {
+  background: #093aec;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+</style>

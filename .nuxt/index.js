@@ -13,6 +13,8 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 /* Plugins */
 
 import nuxt_plugin_plugin_47a267fe from 'nuxt_plugin_plugin_47a267fe' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_chart_353d13b0 from 'nuxt_plugin_chart_353d13b0' // Source: ..\\plugins\\chart (mode: 'client')
+import nuxt_plugin_hchsvuecharts_07532da6 from 'nuxt_plugin_hchsvuecharts_07532da6' // Source: ..\\plugins\\hchs-vue-charts (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -178,6 +180,14 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_47a267fe === 'function') {
     await nuxt_plugin_plugin_47a267fe(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_chart_353d13b0 === 'function') {
+    await nuxt_plugin_chart_353d13b0(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_hchsvuecharts_07532da6 === 'function') {
+    await nuxt_plugin_hchsvuecharts_07532da6(app.context, inject)
   }
 
   // Lock enablePreview in context

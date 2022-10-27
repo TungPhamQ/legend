@@ -1,12 +1,17 @@
 <template>
-  <div class="border-2 rounded w-1/3 border-gray-500">
-    Stock table
+  <div class="stock-table">
+    <div class="title">Stock table</div>
     <div class="flex place-content-between btn">
       <div class="flex option">
-        <div class="btn-tab selected">Tăng giá (%)</div>
-        <div class="btn-tab">Giảm giá (%)</div>
-        <div class="btn-tab">Top mua</div>
-        <div class="btn-tab">Top bán</div>
+        <div
+          v-for="button in buttonList"
+          :key="button.id"
+          :class="selected"
+          class="btn-tab"
+          @click="selectBtn(button.id)"
+        >
+          {{ button.name }}
+        </div>
       </div>
       <div class="flex broker">
         <div class="btn-tab selected">HSX</div>
@@ -27,29 +32,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>VGI</td>
-          <td>Công ty Viettel</td>
-          <td>125</td>
-          <td>+2.05%</td>
-          <td>150000</td>
-          <td>37.289</td>
-        </tr>
-        <tr>
-          <td>VGI</td>
-          <td>Công ty Viettel</td>
-          <td>125</td>
-          <td>+2.05%</td>
-          <td>150000</td>
-          <td>37.289</td>
-        </tr>
-        <tr>
-          <td>VGI</td>
-          <td>Công ty Viettel</td>
-          <td>125</td>
-          <td>+2.05%</td>
-          <td>150000</td>
-          <td>37.289</td>
+        <tr v-for="stock in stock.list" :key="stock.code">
+          <td>{{ stock.code }}</td>
+          <td>{{ stock.companyName }}</td>
+          <td>{{ stock.price }}</td>
+          <td :style="{ color: stock.change.color }">
+            {{ stock.change.number }}
+          </td>
+          <td>{{ stock.volume }}</td>
+          <td>{{ stock.netBuy }}</td>
         </tr>
       </tbody>
     </table>
@@ -60,28 +51,116 @@
 export default {
   name: 'StockTable',
   data() {
-    return {}
+    return {
+      buttonList: [
+        { name: 'Tăng giá%', id: 1 },
+        { name: 'Giảm giá%', id: 2 },
+        { name: 'Top Mua', id: 3 },
+        { name: 'Top Bán', id: 4 },
+      ],
+      stock: {
+        list: [
+          {
+            code: 'VIC',
+            companyName: 'Vin Group',
+            price: '120,120',
+            change: {
+              number: '2%',
+              color: 'green',
+            },
+            volume: '100.000',
+            netBuy: '37.234',
+          },
+          {
+            code: 'VIC',
+            companyName: 'Vin Group',
+            price: '120,120',
+            change: {
+              number: '2%',
+              color: 'red',
+            },
+            volume: '100.000',
+            netBuy: '37.234',
+          },
+          {
+            code: 'VIC',
+            companyName: 'Vin Group',
+            price: '120,120',
+            change: {
+              number: '2%',
+              color: 'green',
+            },
+            volume: '100.000',
+            netBuy: '37.234',
+          },
+          {
+            code: 'VIC',
+            companyName: 'Vin Group',
+            price: '120,120',
+            change: {
+              number: '2%',
+              color: 'red',
+            },
+            volume: '100.000',
+            netBuy: '37.234',
+          },
+          {
+            code: 'VIC',
+            companyName: 'Vin Group',
+            price: '120,120',
+            change: {
+              number: '2%',
+              color: 'red',
+            },
+            volume: '100.000',
+            netBuy: '37.234',
+          },
+        ],
+      },
+    }
+  },
+  methods: {
+    selectBtn(btn) {
+      console.log(btn)
+    },
   },
 }
 </script>
 <style scoped>
+.stock-table {
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.title {
+  color: #333;
+  font-size: 20px;
+  font-weight: 700;
+}
 td,
 th {
-  border: 1px solid #dddddd;
+  border-bottom: 0.5px solid #dddddd;
   text-align: left;
   padding: 8px;
+  text-align: center;
 }
 th {
-  background: #1e3a8a;
-  color: #fff;
+  border-bottom: 2px solid #dddddd;
+  /* background: #1e3a8a; */
+  color: #333;
+}
+table {
+  border: 1px solid #333;
+  border-radius: 15px;
 }
 .selected {
   color: #fff;
   background: #60a5fa;
 }
 .btn-tab {
-  border: 1px solid #6b7280;
   border-radius: 5px 5px 0 0;
   cursor: pointer;
+  margin-right: 5px;
+  padding: 3px 10px;
 }
 </style>

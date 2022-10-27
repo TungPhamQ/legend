@@ -1,4 +1,10 @@
 {
+  "BestStock": {
+    "description": "Auto imported from components/BestStock.vue"
+  },
+  "Chart": {
+    "description": "Auto imported from components/Chart.vue"
+  },
   "IndexInfo": {
     "description": "Auto imported from components/IndexInfo.vue"
   },
@@ -7,6 +13,9 @@
   },
   "SearchBox": {
     "description": "Auto imported from components/SearchBox.vue"
+  },
+  "StockBar": {
+    "description": "Auto imported from components/StockBar.vue"
   },
   "StockTable": {
     "description": "Auto imported from components/StockTable.vue"
@@ -20,7 +29,16 @@
   "Tutorial": {
     "description": "Auto imported from components/Tutorial.vue"
   },
+  "SearchBoxListDropdown": {
+    "description": "Auto imported from components/SearchBox/ListDropdown.vue"
+  },
   "SearchBoxMagnifyGlass": {
     "description": "Auto imported from components/SearchBox/MagnifyGlass.vue"
+  },
+  "SearchBar": {
+    "description": "Auto imported from components/SearchBox/SearchBar.vue"
+  },
+  "SearchBoxSelectResult": {
+    "description": "Auto imported from components/SearchBox/SelectResult.vue"
   }
 }

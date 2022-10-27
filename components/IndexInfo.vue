@@ -1,14 +1,17 @@
 <template>
   <div class="index-info w-1/3">
-    <div class="select-btn">
-      <span class="select">1M</span>
+    <div class="title">Thị trường</div>
+    <!-- <div class="select-btn">
+      <span class="selected">1M</span>
       <span>3M</span>
       <span>5M</span>
       <span>1Y</span>
       <span>3Y</span>
       <span>5Y</span>
+    </div> -->
+    <div class="chart">
+      <Chart />
     </div>
-    <div class="chart"></div>
     <table class="index-table">
       <thead>
         <tr>
@@ -16,15 +19,23 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="">
-            <div class="index">VN30</div>
-            <div class="index-full-name">Chỉ số vn 30</div>
+        <tr
+          v-for="index in indexData.list"
+          :key="index.id"
+          :class="{ selected: isSelected }"
+        >
+          <td>
+            <div class="index">{{ index.code }}</div>
+            <div class="index-full-name">{{ index.name }}</div>
           </td>
           <td class="small-chart">small chart</td>
           <td>
-            <div class="price">1230</div>
-            <div class="change-percent">+1%</div>
+            <div class="price" :style="{ color: index.color }">
+              {{ index.price }}
+            </div>
+            <div class="change-percent" :style="{ color: index.color }">
+              {{ index.change }}
+            </div>
           </td>
         </tr>
       </tbody>
@@ -33,10 +44,15 @@
 </template>
 
 <script>
+import Chart from './Chart.vue'
 export default {
-  name: 'StockTable',
+  name: 'IndexInfo',
+  components: {
+    Chart,
+  },
   data() {
     return {
+      isSelected: false,
       indexData: {
         header: [
           {
@@ -49,7 +65,90 @@ export default {
           },
           {
             id: 3,
-            name: 'Change1',
+            name: 'Change',
+          },
+        ],
+        list: [
+          {
+            id: 1,
+            code: 'VN30',
+            name: 'Chỉ số VN 30',
+            chartData: [],
+            price: 1234,
+            change: '+2.6%',
+            color: 'green',
+          },
+          {
+            id: 2,
+            code: 'VN30',
+            name: 'Chỉ số VN 30',
+            chartData: [],
+            price: 1234,
+            change: '-2.6%',
+            color: 'red',
+          },
+          {
+            id: 3,
+            code: 'VN30',
+            name: 'Chỉ số VN 30',
+            chartData: [],
+            price: 1234,
+            change: '-2.6%',
+            color: 'red',
+          },
+          {
+            id: 4,
+            code: 'VN30',
+            name: 'Chỉ số VN 30',
+            chartData: [],
+            price: 1234,
+            change: '+2.6%',
+            color: 'green',
+          },
+          {
+            id: 5,
+            code: 'VN30',
+            name: 'Chỉ số VN 30',
+            chartData: [],
+            price: 1234,
+            change: '+2.6%',
+            color: 'green',
+          },
+          {
+            id: 6,
+            code: 'VN30',
+            name: 'Chỉ số VN 30',
+            chartData: [],
+            price: 1234,
+            change: '+2.6%',
+            color: 'green',
+          },
+          {
+            id: 7,
+            code: 'VN30',
+            name: 'Chỉ số VN 30',
+            chartData: [],
+            price: 1234,
+            change: '+2.6%',
+            color: 'green',
+          },
+          {
+            id: 8,
+            code: 'VN30',
+            name: 'Chỉ số VN 30',
+            chartData: [],
+            price: 1234,
+            change: '+2.6%',
+            color: 'green',
+          },
+          {
+            id: 9,
+            code: 'VN30',
+            name: 'Chỉ số VN 30',
+            chartData: [],
+            price: 1234,
+            change: '+2.6%',
+            color: 'green',
           },
         ],
       },
@@ -59,20 +158,26 @@ export default {
 </script>
 <style scoped>
 .index-info {
-  padding: 3px;
-  border: 1px solid gray;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.title {
+  color: #333;
+  font-size: 20px;
+  font-weight: 700;
 }
 .chart {
   width: 100%;
   height: 300px;
-  background: gray;
+  /* background: rgba(0, 0, 0, 0.141); */
 }
 .index-table {
   width: 100%;
 }
 th,
 td {
-  border: 1px solid #333;
+  border-bottom: 1px solid #333;
 }
 th {
   text-align: left;
@@ -86,8 +191,17 @@ th {
   color: #000;
   padding: 2px 4px;
 }
-.select-btn .select {
-  background: #2563eb;
-  color: #fff;
+.selected {
+  background: #373a4055;
+  /* color: #fff; */
+}
+.index {
+  font-weight: 700;
+  font-size: 16px;
+  color: #106ba3;
+}
+.index-full-name {
+  font-size: 12px;
+  font-weight: 200;
 }
 </style>
