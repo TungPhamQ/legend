@@ -26,6 +26,7 @@ import StockBar from '../components/StockBar.vue'
 import BestStock from '../components/BestStock.vue'
 export default {
   name: 'IndexPage',
+  //   layout: 'default',
   components: { TheNews, StockTable, IndexInfo, StockBar, BestStock },
 }
 </script>

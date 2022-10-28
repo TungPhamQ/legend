@@ -8,7 +8,7 @@
           :key="button.id"
           :class="selected"
           class="btn-tab"
-          @click="selectBtn(button.id)"
+          @click="selectBtn()"
         >
           {{ button.name }}
         </div>
@@ -120,8 +120,8 @@ export default {
     }
   },
   methods: {
-    selectBtn(btn) {
-      console.log(btn)
+    selectBtn() {
+      console.log('111')
     },
   },
 }

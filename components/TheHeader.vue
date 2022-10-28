@@ -4,16 +4,26 @@
       <NuxtLogo class="w-10 h-10" />
       <ul class="nav-bar">
         <li>
-          <nuxt-link to="/" >Trang chủ </nuxt-link>
+          <nuxt-link to="/" :class="{ active: theRoute == '/' }"
+            >Trang chủ
+          </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/stock-analysis">Phân tích cổ phiếu </nuxt-link>
+          <nuxt-link
+            to="/stock-analysis"
+            :class="{ active: theRoute == '/stock-analysis' }"
+            >Phân tích cổ phiếu
+          </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/tool">Công cụ </nuxt-link>
+          <nuxt-link to="/tool" :class="{ active: theRoute == '/tool' }"
+            >Công cụ
+          </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/wiki">HDSD</nuxt-link>
+          <nuxt-link to="/wiki" :class="{ active: theRoute == '/wiki' }"
+            >HDSD</nuxt-link
+          >
         </li>
       </ul>
     </div>
@@ -41,6 +51,11 @@ export default {
         { name: 'Vin Group', code: 'VIC' },
         { name: 'Vin Group', code: 'VIC' },
       ]
+    },
+  },
+  computed: {
+    theRoute() {
+      return this.$route.path
     },
   },
   methods: {
@@ -81,5 +96,8 @@ ul li {
   padding: 6px 16px;
   border-radius: 4px;
   font-weight: 700;
+}
+.active {
+  color: #3961f8;
 }
 </style>
