@@ -6,17 +6,23 @@
         <div
           v-for="button in buttonList"
           :key="button.id"
-          :class="selected"
+          :class="{ selected: selectedBtn == button.id }"
           class="btn-tab"
-          @click="selectBtn()"
+          @click="selectBtn(button.id)"
         >
           {{ button.name }}
         </div>
       </div>
       <div class="flex broker">
-        <div class="btn-tab selected">HSX</div>
-        <div class="btn-tab">HNX</div>
-        <div class="btn-tab">UPCOM</div>
+        <div
+          v-for="button in buttonListBroker"
+          :key="button.id"
+          :class="{ selected: selectedBtnBroker == button.id }"
+          @click="selectBtnBroker(button.id)"
+          class="btn-tab"
+        >
+          HSX
+        </div>
       </div>
     </div>
 
@@ -52,11 +58,18 @@ export default {
   name: 'StockTable',
   data() {
     return {
+      selectedBtn: 1,
+      selectedBtnBroker: 1,
       buttonList: [
         { name: 'Tăng giá%', id: 1 },
         { name: 'Giảm giá%', id: 2 },
         { name: 'Top Mua', id: 3 },
         { name: 'Top Bán', id: 4 },
+      ],
+      buttonListBroker: [
+        { name: 'HSX', id: 1 },
+        { name: 'HNX', id: 2 },
+        { name: 'UPCOM', id: 3 },
       ],
       stock: {
         list: [
@@ -120,8 +133,11 @@ export default {
     }
   },
   methods: {
-    selectBtn() {
-      console.log('111')
+    selectBtn(btn) {
+      this.selectedBtn = btn
+    },
+    selectBtnBroker(btn) {
+      this.selectedBtnBroker = btn
     },
   },
 }
@@ -149,16 +165,14 @@ th {
   /* background: #1e3a8a; */
   color: #333;
 }
-table {
-  border: 1px solid #333;
-  border-radius: 15px;
-}
+
 .selected {
   color: #fff;
-  background: #60a5fa;
+  background: #3961f8;
+  font-weight: 700;
 }
 .btn-tab {
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   cursor: pointer;
   margin-right: 5px;
   padding: 3px 10px;

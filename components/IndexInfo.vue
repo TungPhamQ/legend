@@ -175,6 +175,11 @@ export default {
 .index-table {
   width: 100%;
 }
+
+tr:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
 th,
 td {
   border-bottom: 1px solid #333;
