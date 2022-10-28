@@ -1,17 +1,17 @@
-export { default as BestStock } from '../..\\components\\BestStock.vue'
-export { default as Chart } from '../..\\components\\Chart.vue'
-export { default as IndexInfo } from '../..\\components\\IndexInfo.vue'
-export { default as NuxtLogo } from '../..\\components\\NuxtLogo.vue'
-export { default as SearchBox } from '../..\\components\\SearchBox.vue'
-export { default as StockBar } from '../..\\components\\StockBar.vue'
-export { default as StockTable } from '../..\\components\\StockTable.vue'
-export { default as TheHeader } from '../..\\components\\TheHeader.vue'
-export { default as TheNews } from '../..\\components\\TheNews.vue'
-export { default as Tutorial } from '../..\\components\\Tutorial.vue'
-export { default as SearchBoxListDropdown } from '../..\\components\\SearchBox\\ListDropdown.vue'
-export { default as SearchBoxMagnifyGlass } from '../..\\components\\SearchBox\\MagnifyGlass.vue'
-export { default as SearchBar } from '../..\\components\\SearchBox\\SearchBar.vue'
-export { default as SearchBoxSelectResult } from '../..\\components\\SearchBox\\SelectResult.vue'
+export const BestStock = () => import('../..\\components\\BestStock.vue' /* webpackChunkName: "components/best-stock" */).then(c => wrapFunctional(c.default || c))
+export const Chart = () => import('../..\\components\\Chart.vue' /* webpackChunkName: "components/chart" */).then(c => wrapFunctional(c.default || c))
+export const IndexInfo = () => import('../..\\components\\IndexInfo.vue' /* webpackChunkName: "components/index-info" */).then(c => wrapFunctional(c.default || c))
+export const NuxtLogo = () => import('../..\\components\\NuxtLogo.vue' /* webpackChunkName: "components/nuxt-logo" */).then(c => wrapFunctional(c.default || c))
+export const SearchBox = () => import('../..\\components\\SearchBox.vue' /* webpackChunkName: "components/search-box" */).then(c => wrapFunctional(c.default || c))
+export const StockBar = () => import('../..\\components\\StockBar.vue' /* webpackChunkName: "components/stock-bar" */).then(c => wrapFunctional(c.default || c))
+export const StockTable = () => import('../..\\components\\StockTable.vue' /* webpackChunkName: "components/stock-table" */).then(c => wrapFunctional(c.default || c))
+export const TheHeader = () => import('../..\\components\\TheHeader.vue' /* webpackChunkName: "components/the-header" */).then(c => wrapFunctional(c.default || c))
+export const TheNews = () => import('../..\\components\\TheNews.vue' /* webpackChunkName: "components/the-news" */).then(c => wrapFunctional(c.default || c))
+export const Tutorial = () => import('../..\\components\\Tutorial.vue' /* webpackChunkName: "components/tutorial" */).then(c => wrapFunctional(c.default || c))
+export const SearchBoxListDropdown = () => import('../..\\components\\SearchBox\\ListDropdown.vue' /* webpackChunkName: "components/search-box-list-dropdown" */).then(c => wrapFunctional(c.default || c))
+export const SearchBoxMagnifyGlass = () => import('../..\\components\\SearchBox\\MagnifyGlass.vue' /* webpackChunkName: "components/search-box-magnify-glass" */).then(c => wrapFunctional(c.default || c))
+export const SearchBar = () => import('../..\\components\\SearchBox\\SearchBar.vue' /* webpackChunkName: "components/search-bar" */).then(c => wrapFunctional(c.default || c))
+export const SearchBoxSelectResult = () => import('../..\\components\\SearchBox\\SelectResult.vue' /* webpackChunkName: "components/search-box-select-result" */).then(c => wrapFunctional(c.default || c))
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

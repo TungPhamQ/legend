@@ -3,24 +3,28 @@
     "name": "stock-analysis",
     "path": "/stock-analysis",
     "component": "D:\\\\Desktop_work\\\\tai_lieu_hoc\\\\IMC\\\\legend_investor\\\\legend_investor\\\\pages\\\\stock-analysis.vue",
-    "chunkName": "pages/stock-analysis"
+    "chunkName": "pages/stock-analysis",
+    "_name": "_dfeccc46"
   },
   {
     "name": "tool",
     "path": "/tool",
     "component": "D:\\\\Desktop_work\\\\tai_lieu_hoc\\\\IMC\\\\legend_investor\\\\legend_investor\\\\pages\\\\tool.vue",
-    "chunkName": "pages/tool"
+    "chunkName": "pages/tool",
+    "_name": "_50d8ffc2"
   },
   {
     "name": "wiki",
     "path": "/wiki",
     "component": "D:\\\\Desktop_work\\\\tai_lieu_hoc\\\\IMC\\\\legend_investor\\\\legend_investor\\\\pages\\\\wiki.vue",
-    "chunkName": "pages/wiki"
+    "chunkName": "pages/wiki",
+    "_name": "_441979da"
   },
   {
     "name": "index",
     "path": "/",
     "component": "D:\\\\Desktop_work\\\\tai_lieu_hoc\\\\IMC\\\\legend_investor\\\\legend_investor\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_94deb5d0"
   }
 ]
