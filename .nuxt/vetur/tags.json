@@ -37,8 +37,5 @@
   },
   "SearchBar": {
     "description": "Auto imported from components/SearchBox/SearchBar.vue"
-  },
-  "SearchBoxSelectResult": {
-    "description": "Auto imported from components/SearchBox/SelectResult.vue"
   }
 }

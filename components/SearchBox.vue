@@ -1,17 +1,11 @@
 <template>
   <div class="search-box">
-    <!-- <MagnifyGlass /> -->
-    <!-- <input type="text" class="rounded-3xl" v-model="searchInput" /> -->
-
     <SearchBar @click.native="toggleList" @search="getSearch" />
-
     <ListDropdown
       class="list-dropdown"
       :listAPI="listAPI"
-      @selectNewOption="updateSelectOption"
-      @toggleList="toggleList"
       v-if="isShow"
-      :search="search"
+      @click.native="toggleList"
     />
   </div>
 </template>
@@ -23,14 +17,11 @@ import ListDropdown from './SearchBox/ListDropdown.vue'
 export default {
   name: 'SearchBox',
   components: { MagnifyGlass, SearchBar, ListDropdown },
+  props: { listAPI: Array },
   data() {
     return {
       searchInput: '',
-      dataSearch: [
-        { code: 'VIC', name: 'Vin Group' },
-        { code: 'BAF', name: 'Nông nghiệp BAF Việt Nam' },
-        { code: 'BAX', name: 'CTCP Thống Nhất' },
-      ],
+      isShow: false,
     }
   },
   methods: {
@@ -39,7 +30,6 @@ export default {
     },
     toggleList() {
       this.isShow = !this.isShow
-      console.log(this.isShow)
     },
     getSearch(e) {
       this.search = e
@@ -53,8 +43,10 @@ export default {
 } */
 .search-box {
   margin-right: 10px;
+  position: relative;
 }
 .list-dropdown {
   z-index: 100;
+  position: absolute;
 }
 </style>

@@ -1,16 +1,9 @@
 <template>
   <div class="index-info w-1/3">
     <div class="title">Thị trường</div>
-    <!-- <div class="select-btn">
-      <span class="selected">1M</span>
-      <span>3M</span>
-      <span>5M</span>
-      <span>1Y</span>
-      <span>3Y</span>
-      <span>5Y</span>
-    </div> -->
-    <div class="chart">
-      <Chart />
+
+    <div class="chart" style="color: red">
+      <Chart />{{ selectedIndex + 'chart' }}
     </div>
     <table class="index-table">
       <thead>
@@ -23,6 +16,7 @@
           v-for="index in indexData.list"
           :key="index.id"
           :class="{ selected: isSelected }"
+          @click="selectIndex(index.code)"
         >
           <td>
             <div class="index">{{ index.code }}</div>
@@ -53,6 +47,7 @@ export default {
   data() {
     return {
       isSelected: false,
+      selectedIndex: 'VN30',
       indexData: {
         header: [
           {
@@ -80,7 +75,7 @@ export default {
           },
           {
             id: 2,
-            code: 'VN30',
+            code: 'SP500',
             name: 'Chỉ số VN 30',
             chartData: [],
             price: 1234,
@@ -89,7 +84,7 @@ export default {
           },
           {
             id: 3,
-            code: 'VN30',
+            code: 'downjohn',
             name: 'Chỉ số VN 30',
             chartData: [],
             price: 1234,
@@ -98,7 +93,7 @@ export default {
           },
           {
             id: 4,
-            code: 'VN30',
+            code: 'HK',
             name: 'Chỉ số VN 30',
             chartData: [],
             price: 1234,
@@ -107,7 +102,7 @@ export default {
           },
           {
             id: 5,
-            code: 'VN30',
+            code: 'JP',
             name: 'Chỉ số VN 30',
             chartData: [],
             price: 1234,
@@ -154,6 +149,12 @@ export default {
       },
     }
   },
+  methods: {
+    selectIndex(index) {
+      this.selectedIndex = index
+      console.log(index)
+    },
+  },
 }
 </script>
 <style scoped>
@@ -161,6 +162,7 @@ export default {
   border-radius: 15px;
   padding: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: fit-content;
 }
 .title {
   color: #333;
@@ -176,7 +178,7 @@ export default {
   width: 100%;
 }
 
-tr:hover {
+tbody tr:hover {
   background: rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }

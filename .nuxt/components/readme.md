@@ -19,4 +19,3 @@ You can directly use them in pages and other components without the need to impo
 - `<SearchBoxListDropdown>` | `<search-box-list-dropdown>` (components/SearchBox/ListDropdown.vue)
 - `<SearchBoxMagnifyGlass>` | `<search-box-magnify-glass>` (components/SearchBox/MagnifyGlass.vue)
 - `<SearchBar>` | `<search-bar>` (components/SearchBox/SearchBar.vue)
-- `<SearchBoxSelectResult>` | `<search-box-select-result>` (components/SearchBox/SelectResult.vue)

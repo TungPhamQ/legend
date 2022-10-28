@@ -21,7 +21,7 @@
           @click="selectBtnBroker(button.id)"
           class="btn-tab"
         >
-          HSX
+          {{ button.name }}
         </div>
       </div>
     </div>
@@ -38,7 +38,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="stock in stock.list" :key="stock.code">
+        <div style="color: red">{{ stockTable }}</div>
+        <tr v-for="stock in stockList" :key="stock.code">
           <td>{{ stock.code }}</td>
           <td>{{ stock.companyName }}</td>
           <td>{{ stock.price }}</td>
@@ -58,18 +59,19 @@ export default {
   name: 'StockTable',
   data() {
     return {
-      selectedBtn: 1,
-      selectedBtnBroker: 1,
+      selectedBtn: 'up',
+      selectedBtnBroker: 'hsx',
+
       buttonList: [
-        { name: 'Tăng giá%', id: 1 },
-        { name: 'Giảm giá%', id: 2 },
-        { name: 'Top Mua', id: 3 },
-        { name: 'Top Bán', id: 4 },
+        { name: 'Tăng giá%', id: 'up' },
+        { name: 'Giảm giá%', id: 'down' },
+        { name: 'Top Mua', id: 'topBuy' },
+        { name: 'Top Bán', id: 'topSell' },
       ],
       buttonListBroker: [
-        { name: 'HSX', id: 1 },
-        { name: 'HNX', id: 2 },
-        { name: 'UPCOM', id: 3 },
+        { name: 'HSX', id: 'hsx' },
+        { name: 'HNX', id: 'hnx' },
+        { name: 'UPCOM', id: 'upcom' },
       ],
       stock: {
         list: [
@@ -131,6 +133,14 @@ export default {
         ],
       },
     }
+  },
+  computed: {
+    stockList() {
+      return this.stock.list
+    },
+    stockTable() {
+      return `${this.selectedBtn}-${this.selectedBtnBroker}`
+    },
   },
   methods: {
     selectBtn(btn) {

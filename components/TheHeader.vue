@@ -1,7 +1,7 @@
 <template>
   <header class="header flex place-content-between items-end gap-5 h-10">
     <div class="flex items-center">
-      <NuxtLogo class="w-10 h-10" />
+      <NuxtLogo class="w-10 h-10 logo" />
       <ul class="nav-bar">
         <li>
           <nuxt-link to="/" :class="{ active: theRoute == '/' }"
@@ -43,15 +43,15 @@ import SearchBox from './SearchBox.vue'
 export default {
   name: 'The Header',
   components: { NuxtLogo, SearchBox },
-  data: {
-    return() {
+  data() {
+    return {
       listAPI: [
         { name: 'Vin Group', code: 'VIC' },
-        { name: 'Vin Group', code: 'VIC' },
-        { name: 'Vin Group', code: 'VIC' },
-        { name: 'Vin Group', code: 'VIC' },
-      ]
-    },
+        { name: 'Tập đoàn FLC', code: 'FLC' },
+        { name: 'Công ty đầu tư địa ốc An Khang', code: 'KAC' },
+        { name: 'Công ty Thủy sản MeKong', code: 'AAM' },
+      ],
+    }
   },
   computed: {
     theRoute() {
@@ -71,7 +71,7 @@ export default {
 <style>
 .header {
   height: auto;
-  padding: 4px 24px;
+  padding: 4px 24px 4px 4px;
   margin-bottom: 10px;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
@@ -79,6 +79,9 @@ export default {
   position: sticky;
   top: 0;
   z-index: 999;
+}
+.logo {
+  margin-right: 5px;
 }
 ul li {
   font-size: 16px;
