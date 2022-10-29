@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown">
-    <div v-for="stock in listAPI" :key="stock.code" class="stock-wrap">
-      <nuxt-link :to="`tool/${stock.code}`">
+    <div v-for="stock in filteredList" :key="stock.code" class="stock-wrap">
+      <nuxt-link :to="`/${stock.code}`">
         <span class="code">{{ stock.code }}</span>
         <span class="name">{{ stock.name }}</span>
       </nuxt-link>
@@ -11,7 +11,20 @@
 
 <script>
 export default {
-  props: { listAPI: Array },
+  props: { listAPI: Array, search: String },
+  computed: {
+    filteredList() {
+      // TODO: need to add debounce later
+      return this.listAPI.filter((item) => {
+        const itemArray = Object.values(item)
+        const itemString = itemArray.join()
+        return itemString
+          .toLowerCase()
+          .trim()
+          .includes(this.search.toLowerCase().trim())
+      })
+    },
+  },
 }
 </script>
 
@@ -20,15 +33,14 @@ export default {
   background: #fff;
   width: 300px;
   height: auto;
-  padding: 5px;
+  padding: 5px 0;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .stock-wrap {
-  margin: 10px;
   display: flex;
   cursor: pointer;
-  padding: 4px 10px;
+  padding: 10px;
 }
 .stock-wrap:hover {
   background: rgba(0, 0, 0, 0.1);

@@ -139,8 +139,11 @@ img:hover {
 
   line-height: 18px;
 
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: pre-line;
+}
+.news-content:after {
+  content: '...Xem thêm';
 }
 </style>

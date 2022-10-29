@@ -1,9 +1,11 @@
 <template>
+  <!-- TODO:  ADD CLICK OUTSIDE -->
   <div class="search-box">
     <SearchBar @click.native="toggleList" @search="getSearch" />
     <ListDropdown
       class="list-dropdown"
       :listAPI="listAPI"
+      :search="search"
       v-if="isShow"
       @click.native="toggleList"
     />
@@ -20,7 +22,7 @@ export default {
   props: { listAPI: Array },
   data() {
     return {
-      searchInput: '',
+      search: '',
       isShow: false,
     }
   },
@@ -33,6 +35,11 @@ export default {
     },
     getSearch(e) {
       this.search = e
+    },
+  },
+  watch: {
+    search() {
+      if (this.search) this.isShow = true
     },
   },
 }
