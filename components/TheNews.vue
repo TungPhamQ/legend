@@ -139,11 +139,19 @@ img:hover {
 
   line-height: 18px;
 
-  white-space: nowrap;
+  white-space: pre-line;
   overflow: hidden;
   text-overflow: ellipsis;
+  position: relative;
 }
 .news-content:after {
-  content: '...Xem thêm';
+  /* truncate news content */
+  content: '... Xem thêm';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-left: 1px;
+  background: #fff;
+  color: #093aec;
 }
 </style>
