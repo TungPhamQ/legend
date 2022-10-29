@@ -8,6 +8,12 @@
     </svg>
   </div>
 </template>
+<script>
+export default {
+  name: 'MagnifyGlass',
+}
+</script>
+
 <style scoped>
 .magnifying-glass {
   height: 14px;

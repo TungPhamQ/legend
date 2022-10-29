@@ -102,7 +102,7 @@ export default {
             },
           },
           {
-            code: 'VGI',
+            code: 'VGI2',
             chart: [],
             smg: '99',
             price: '33,336',
@@ -120,7 +120,7 @@ export default {
             },
           },
           {
-            code: 'VGI',
+            code: 'VGI3',
             chart: [],
             smg: '99',
             price: '33,336',
@@ -138,7 +138,7 @@ export default {
             },
           },
           {
-            code: 'VGI',
+            code: 'VGI4',
             chart: [],
             smg: '99',
             price: '33,336',

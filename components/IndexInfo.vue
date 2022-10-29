@@ -3,7 +3,8 @@
     <div class="title">Thị trường</div>
 
     <div class="chart" style="color: red">
-      <Chart />{{ selectedIndex + 'chart' }}
+      <div>{{ selectedIndex + 'chart' }}</div>
+      <TheChart />
     </div>
     <table class="index-table">
       <thead>
@@ -38,11 +39,11 @@
 </template>
 
 <script>
-import Chart from './Chart.vue'
+import TheChart from './TheChart.vue'
 export default {
   name: 'IndexInfo',
   components: {
-    Chart,
+    TheChart,
   },
   data() {
     return {

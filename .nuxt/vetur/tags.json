@@ -2,9 +2,6 @@
   "BestStock": {
     "description": "Auto imported from components/BestStock.vue"
   },
-  "Chart": {
-    "description": "Auto imported from components/Chart.vue"
-  },
   "IndexInfo": {
     "description": "Auto imported from components/IndexInfo.vue"
   },
@@ -19,6 +16,9 @@
   },
   "StockTable": {
     "description": "Auto imported from components/StockTable.vue"
+  },
+  "TheChart": {
+    "description": "Auto imported from components/TheChart.vue"
   },
   "TheHeader": {
     "description": "Auto imported from components/TheHeader.vue"

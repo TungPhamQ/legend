@@ -76,7 +76,7 @@ export default {
       stock: {
         list: [
           {
-            code: 'VIC',
+            code: 'VIC1',
             companyName: 'Vin Group',
             price: '120,120',
             change: {
@@ -87,7 +87,7 @@ export default {
             netBuy: '37.234',
           },
           {
-            code: 'VIC',
+            code: 'VIC2',
             companyName: 'Vin Group',
             price: '120,120',
             change: {
@@ -98,7 +98,7 @@ export default {
             netBuy: '37.234',
           },
           {
-            code: 'VIC',
+            code: 'VIC3',
             companyName: 'Vin Group',
             price: '120,120',
             change: {
@@ -109,7 +109,7 @@ export default {
             netBuy: '37.234',
           },
           {
-            code: 'VIC',
+            code: 'VIC4',
             companyName: 'Vin Group',
             price: '120,120',
             change: {
@@ -120,7 +120,7 @@ export default {
             netBuy: '37.234',
           },
           {
-            code: 'VIC',
+            code: 'VIC5',
             companyName: 'Vin Group',
             price: '120,120',
             change: {

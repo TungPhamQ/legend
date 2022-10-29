@@ -8,12 +8,6 @@
         <BestStock />
       </div>
       <IndexInfo />
-      <chartjs-line
-        :beginzero="true"
-        :datalabel="'TestLabel'"
-        :label="[1, 2, 3, 4]"
-        :data="[1, 2, 3, 4]"
-      />
     </div>
   </div>
 </template>
@@ -26,7 +20,6 @@ import StockBar from '../components/StockBar.vue'
 import BestStock from '../components/BestStock.vue'
 export default {
   name: 'IndexPage',
-  //   layout: 'default',
   components: { TheNews, StockTable, IndexInfo, StockBar, BestStock },
 }
 </script>

@@ -13,12 +13,11 @@
 </template>
 
 <script>
-import MagnifyGlass from './SearchBox/MagnifyGlass.vue'
 import SearchBar from './SearchBox/SearchBar.vue'
 import ListDropdown from './SearchBox/ListDropdown.vue'
 export default {
   name: 'SearchBox',
-  components: { MagnifyGlass, SearchBar, ListDropdown },
+  components: { SearchBar, ListDropdown },
   props: { listAPI: Array },
   data() {
     return {

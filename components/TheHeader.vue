@@ -41,7 +41,7 @@
 import NuxtLogo from './NuxtLogo.vue'
 import SearchBox from './SearchBox.vue'
 export default {
-  name: 'The Header',
+  name: 'TheHeader',
   components: { NuxtLogo, SearchBox },
   data() {
     return {
