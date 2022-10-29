@@ -2,13 +2,19 @@
   <div>
     <highcharts
       :constructor-type="'stockChart'"
-      :options="chartOptions"
+      :options="chartData"
     ></highcharts>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    chartData: {
+      type: Object,
+      default: () => {},
+    },
+  },
   data() {
     return {
       chartOptions: {

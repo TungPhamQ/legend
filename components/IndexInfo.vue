@@ -4,7 +4,7 @@
 
     <div class="chart" style="color: red">
       <div>{{ selectedIndex + 'chart' }}</div>
-      <TheChart />
+      <TheChart :chartData="chartData" />
     </div>
     <table class="index-table">
       <thead>
@@ -48,7 +48,8 @@ export default {
   data() {
     return {
       isSelected: false,
-      selectedIndex: 'VN30',
+      selectedIndex: 'vn30',
+
       indexData: {
         header: [
           {
@@ -64,96 +65,154 @@ export default {
             name: 'Change',
           },
         ],
-        list: [
-          {
+        list: {
+          vn30: {
             id: 1,
-            code: 'VN30',
+            code: 'vn30',
             name: 'Chỉ số VN 30',
-            chartData: [],
+            chartData: {
+              series: [
+                {
+                  data: [1, 2, 3],
+                },
+              ],
+            },
             price: 1234,
             change: '+2.6%',
             color: 'green',
           },
-          {
+          sp500: {
             id: 2,
-            code: 'SP500',
+            code: 'sp500',
             name: 'Chỉ số VN 30',
-            chartData: [],
+            chartData: {
+              series: [
+                {
+                  data: [12, 2, 3],
+                },
+              ],
+            },
             price: 1234,
             change: '-2.6%',
             color: 'red',
           },
-          {
+          downjohn: {
             id: 3,
             code: 'downjohn',
             name: 'Chỉ số VN 30',
-            chartData: [],
+            chartData: {
+              series: [
+                {
+                  data: [1, 2, 6],
+                },
+              ],
+            },
             price: 1234,
             change: '-2.6%',
             color: 'red',
           },
-          {
+          hk: {
             id: 4,
-            code: 'HK',
+            code: 'hk',
             name: 'Chỉ số VN 30',
-            chartData: [],
+            chartData: {
+              series: [
+                {
+                  data: [1, 2, 61],
+                },
+              ],
+            },
             price: 1234,
             change: '+2.6%',
             color: 'green',
           },
-          {
+          jp: {
             id: 5,
-            code: 'JP',
+            code: 'jp',
             name: 'Chỉ số VN 30',
-            chartData: [],
+            chartData: {
+              series: [
+                {
+                  data: [1, -1, 3],
+                },
+              ],
+            },
             price: 1234,
             change: '+2.6%',
             color: 'green',
           },
-          {
+          vn301: {
             id: 6,
-            code: 'VN30',
+            code: 'vn301',
             name: 'Chỉ số VN 30',
-            chartData: [],
+            chartData: {
+              series: [
+                {
+                  data: [1, 2, 3],
+                },
+              ],
+            },
             price: 1234,
             change: '+2.6%',
             color: 'green',
           },
-          {
+          vn302: {
             id: 7,
-            code: 'VN30',
-            name: 'Chỉ số VN 30',
-            chartData: [],
+            code: 'vn302',
+            name: 'Chỉ số VN 302',
+            chartData: {
+              series: [
+                {
+                  data: [1, 2, 31],
+                },
+              ],
+            },
             price: 1234,
             change: '+2.6%',
             color: 'green',
           },
-          {
+          vn303: {
             id: 8,
-            code: 'VN30',
+            code: 'vn303',
             name: 'Chỉ số VN 30',
-            chartData: [],
+            chartData: {
+              series: [
+                {
+                  data: [1, 21, 3],
+                },
+              ],
+            },
             price: 1234,
             change: '+2.6%',
             color: 'green',
           },
-          {
+          vn304: {
             id: 9,
-            code: 'VN30',
+            code: 'vn304',
             name: 'Chỉ số VN 30',
-            chartData: [],
+            chartData: {
+              series: [
+                {
+                  data: [1, 2, 3],
+                },
+              ],
+            },
             price: 1234,
             change: '+2.6%',
             color: 'green',
           },
-        ],
+        },
       },
     }
+  },
+  computed: {
+    chartData() {
+      return this.indexData?.list[`${this.selectedIndex}`]?.chartData
+    },
   },
   methods: {
     selectIndex(index) {
       this.selectedIndex = index
-      console.log(index)
     },
   },
 }
@@ -172,8 +231,6 @@ export default {
 }
 .chart {
   width: 100%;
-  height: 300px;
-  /* background: rgba(0, 0, 0, 0.141); */
 }
 .index-table {
   width: 100%;
